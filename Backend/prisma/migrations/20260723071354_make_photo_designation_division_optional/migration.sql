@@ -1,0 +1,4 @@
+-- AlterTable
+ALTER TABLE "User" ALTER COLUMN "designation" DROP NOT NULL,
+ALTER COLUMN "division" DROP NOT NULL,
+ALTER COLUMN "photoUrl" DROP NOT NULL;
