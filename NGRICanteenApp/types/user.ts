@@ -6,6 +6,7 @@ export interface User {
     mobile: string;
 
     employeeId: string;
+    projectStaffId: string;
 
     designation: string;
 

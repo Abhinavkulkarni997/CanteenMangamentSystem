@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import {  useCallback,useState } from "react";
 import {
   View,
   StyleSheet,
@@ -7,7 +7,7 @@ import {
   Text,
 } from "react-native";
 
-import { router } from "expo-router";
+import { router ,useFocusEffect} from "expo-router";
 
 import * as menuService from "../../services/menu";
 
@@ -34,6 +34,7 @@ export default function Menu() {
 //   },
 // ]);
   const [loading, setLoading] = useState(true);
+  const [refreshing, setRefreshing] = useState(false);
 
   const {
     items,
@@ -44,12 +45,19 @@ export default function Menu() {
     totalAmount,
   } = useCart();
 
-  useEffect(() => {
+  useFocusEffect(
+    useCallback(() => {
     loadMenu();
-  }, []);
+  }, []));
 
-  const loadMenu = async () => {
-    try {
+  const loadMenu = async (isRefresh=false) => {
+    try{
+      if(isRefresh){
+        setRefreshing(true);
+      }else{
+        setLoading(true);
+      }
+    
       const response = await menuService.getTodayMenu();
        console.log("Full response:", response);
     console.log("response.data:", response.data);
@@ -62,9 +70,14 @@ export default function Menu() {
       console.log("Load menu error", error);
     } 
     finally {
-      setLoading(false);
+      if(isRefresh){
+        setRefreshing(false);
+      }else{
+        setLoading(false);
+      }
     }
   };
+  
   const lunchItems = menu.filter(
   (item) => item.sessionType === "LUNCH"
 );
@@ -282,6 +295,8 @@ const sections = [
   data={sections}
   keyExtractor={(item) => item.type}
   contentContainerStyle={{ paddingBottom: 110 }}
+   refreshing={refreshing}
+  onRefresh={() => loadMenu(true)}
   renderItem={({ item }) =>
     renderMenuSection(
       item.title,

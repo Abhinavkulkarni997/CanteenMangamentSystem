@@ -101,7 +101,7 @@ export default function Profile() {
           <InfoRow
             icon="card-account-details"
             label="Employee ID"
-            value={user?.employeeId}
+            value={user?.employeeId || user?.projectStaffId }
           />
 
           <Divider />

@@ -28,6 +28,13 @@ interface InputProps {
     | "words"
     | "characters"
     | "sentences";
+autoCorrect?: boolean;
+
+textContentType?:
+  | "telephoneNumber"
+  | "password"
+  | "emailAddress"
+  | "none";
 
   editable?: boolean;
 
@@ -35,7 +42,7 @@ interface InputProps {
 }
 
 export default function Input({
-  label,
+   label,
   value,
   onChangeText,
   placeholder,
@@ -43,8 +50,10 @@ export default function Input({
   secureTextEntry = false,
   keyboardType = "default",
   autoCapitalize = "sentences",
+  autoCorrect = false,
+  textContentType = "none",
   editable = true,
-  maxLength
+  maxLength,
 }: InputProps) {
   return (
     <View style={styles.container}>
@@ -52,9 +61,9 @@ export default function Input({
 
      
       <TextInput
- style={[
+  style={[
     styles.input,
-    error && styles.inputError,
+    error ? styles.inputError : null,
   ]}
   value={value}
   placeholder={placeholder}
@@ -62,6 +71,8 @@ export default function Input({
   secureTextEntry={secureTextEntry}
   keyboardType={keyboardType}
   autoCapitalize={autoCapitalize}
+  autoCorrect={autoCorrect}
+  textContentType={textContentType}
   editable={editable}
   maxLength={maxLength}
 />
