@@ -29,6 +29,9 @@ if (!form.email.trim()) {
   if (!MOBILE_REGEX.test(form.mobile.trim())) {
     errors.mobile = "Please enter a valid mobile number.";
   }
+  if (!form.gender) {
+  errors.gender = "Please select gender";
+}
 
   if (!form.password) {
     errors.password = "Password is required.";

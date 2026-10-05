@@ -33,7 +33,7 @@ const LatestOrders=({orders}: Props) => {
                             {order.orderNumber}
                         </p>
                         <p className="text-sm text-slate-500">
-                            {order.user.name}
+                            {order.user?.name??"Guest"}
                         </p>
                     </div>
                     <div className="text-right">

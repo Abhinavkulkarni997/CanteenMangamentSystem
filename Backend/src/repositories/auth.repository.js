@@ -49,6 +49,7 @@ export const findUserById = async (id) => {
             name: true,
             email: true,
             mobile: true,
+            gender: true,
             employeeId: true,
             projectStaffId: true,
             designation: true,

@@ -10,6 +10,7 @@ import {useOrderDetails} from "../../hooks/useOrderDetails";
 import { Badge } from "../../components/ui/badge";
 import { Button } from "../../components/ui/button";
 import { useCollectOrder } from "../../hooks/useCollectOrder";
+import type { Order } from "../../types/order";
 
 interface Props{
     open:boolean;
@@ -189,7 +190,7 @@ Mobile Number
 
         <tbody>
 
-            {data.items.map(item => (
+            {data.items.map((item:Order["items"][number]) => (
 
                 <tr
                     key={item.id}

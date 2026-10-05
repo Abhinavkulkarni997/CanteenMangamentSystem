@@ -1,5 +1,5 @@
 import { MoreHorizontal } from "lucide-react";
-import { Button } from "../../components/ui/button";
+// import { Button } from "../../components/ui/button";
 import { useState } from "react";
 import {
   DropdownMenu,
@@ -23,7 +23,7 @@ const [statusOpen, setStatusOpen] = useState(false);
     <>
     <DropdownMenu>
 
-      <DropdownMenuTrigger asChild>
+      {/* <DropdownMenuTrigger >
 
         <Button
           variant="ghost"
@@ -32,7 +32,13 @@ const [statusOpen, setStatusOpen] = useState(false);
           <MoreHorizontal className="h-4 w-4" />
         </Button>
 
-      </DropdownMenuTrigger>
+      </DropdownMenuTrigger> */}
+      <DropdownMenuTrigger
+  className="inline-flex items-center justify-center rounded-md p-2 hover:bg-accent"
+  aria-label="User actions"
+>
+  <MoreHorizontal className="h-4 w-4" />
+</DropdownMenuTrigger>
 
       <DropdownMenuContent align="end">
 

@@ -12,6 +12,9 @@ export const userSchema = z
     mobile: z
       .string()
       .regex(/^[6-9]\d{9}$/, "Invalid mobile number"),
+      gender: z
+  .enum(["MALE", "FEMALE", "OTHER"]),
+  // .refine((value) => value !== "", "Please select gender"),
 
     employeeId: z.string().optional(),
     projectStaffId: z.string().optional(),

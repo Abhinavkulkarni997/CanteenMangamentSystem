@@ -13,6 +13,7 @@ export const findOrderByQrToken = (qrToken) => {
           name: true,
 
           mobile: true,
+          gender: true,
 
           employeeId: true,
           projectStaffId: true,
@@ -132,6 +133,7 @@ export const todayOrders = () => {
           name: true,
 
           mobile: true,
+          gender: true,
 
           employeeId: true,
           projectStaffId: true,
@@ -180,6 +182,7 @@ export const latestOrders = () => {
           name: true,
 
           mobile: true,
+          gender: true,
 
           employeeId: true,
           projectStaffId: true,
@@ -274,6 +277,7 @@ export const getOrders = async ({
             employeeId: true,
             projectStaffId: true,
             mobile: true,
+            gender: true,
             designation: true,
             division: true,
           },

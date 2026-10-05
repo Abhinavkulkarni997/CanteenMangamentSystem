@@ -8,6 +8,7 @@ const userResponse = (user) => {
         name: user.name,
         email: user.email,
         mobile: user.mobile,
+        gender: user.gender,
         employeeId: user.employeeId,
         projectStaffId: user.projectStaffId,
         designation: user.designation,

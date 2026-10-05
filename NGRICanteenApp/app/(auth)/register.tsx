@@ -88,6 +88,7 @@ if (Object.keys(validationErrors).length > 0) {
   name: form.name.trim(),
   mobile: form.mobile.trim(),
   password: form.password,
+  gender: form.gender as RegisterRequest["gender"],
 
   email: form.email.trim() || undefined,
 
@@ -174,6 +175,23 @@ await register(payload);
         }
         error={errors.mobile}
       />
+     <AppPicker
+  label="Gender"
+  selectedValue={form.gender}
+  onValueChange={(value) =>
+    updateField(
+      "gender",
+      value as RegisterForm["gender"]
+    )
+  }
+  items={[
+    { label: "Select Gender", value: "" },
+    { label: "Male", value: "MALE" },
+    { label: "Female", value: "FEMALE" },
+    { label: "Other", value: "OTHER" },
+  ]}
+  error={errors.gender}
+/>
 
       <Input
         label="Password"

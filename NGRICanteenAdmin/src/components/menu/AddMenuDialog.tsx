@@ -18,7 +18,7 @@ import {
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { menuSchema} from "../../pages/Menu/MenuSchema";
-import type {MenuForm } from "../../pages/Menu/MenuSchema";
+import type {MenuForm,MenuFormInput } from "../../pages/Menu/MenuSchema";
 
 import * as menuService from "../../services/menu";
 import toast from "react-hot-toast";
@@ -44,10 +44,13 @@ export default function AddMenuDialog({
     control,
     reset,
     formState: { errors },
-  } = useForm<MenuForm>({
+  } = useForm<MenuFormInput,unknown,MenuForm>({
     resolver: zodResolver(menuSchema),
     defaultValues: {
       sessionType: "LUNCH",
+      itemName: "",
+    description: "",
+    price: 0,
     },
   });
 
@@ -125,7 +128,7 @@ export default function AddMenuDialog({
 
           <div>
             <Label>Price</Label>
-            <Input type="number" {...register("price")} />
+            <Input type="number" step="0.01" {...register("price")} />
             <p className="text-red-500 text-sm">{errors.price?.message}</p>
           </div>
 

@@ -67,7 +67,7 @@ const { data, isLoading } = useOrders(
             <Select
               value={status}
               onValueChange={(value) => {
-                setStatus(value);
+                setStatus(value??"");
 
                 setPage(1);
               }}

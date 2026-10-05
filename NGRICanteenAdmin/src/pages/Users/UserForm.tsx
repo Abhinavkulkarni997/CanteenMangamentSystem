@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import { Button } from "../../components/ui/button";
 import { Input } from "../../components/ui/input";
-import { useState,useEffect } from "react";
+import { useEffect } from "react";
 
 
 import {
@@ -35,7 +35,7 @@ export default function UserForm({
   defaultValues,
   onSubmit,
   loading = false,
-  photo,
+  // photo,
   setPhoto,
 }: UserFormProps) {
   const navigate = useNavigate();
@@ -61,6 +61,7 @@ export default function UserForm({
       division: "",
       role: "USER",
       userType: "EMPLOYEE",
+      gender: undefined,
       password: "",
       confirmPassword: "",
       ...defaultValues,
@@ -89,6 +90,7 @@ useEffect(() => {
       name: defaultValues.name ?? "",
       email: defaultValues.email ?? "",
       mobile: defaultValues.mobile ?? "",
+      gender: defaultValues.gender ,
       employeeId: defaultValues.employeeId ?? "",
       projectStaffId: defaultValues.projectStaffId ?? "",
       designation: defaultValues.designation ?? "",
@@ -134,7 +136,7 @@ useEffect(() => {
    
     onChange={(e) =>{
     const file = e.target.files?.[0] ?? null;
-    console.log(file); // <-- add this
+    // console.log(file); // <-- add this
     setPhoto(file);
 
     }}
@@ -179,6 +181,40 @@ useEffect(() => {
             <p className="mt-1 text-sm text-red-500">{errors.mobile.message}</p>
           )}
         </div>
+
+        {/* Gender */}
+<div>
+  <label className="mb-2 block text-sm font-medium">
+    Gender
+  </label>
+
+  <Controller
+  control={control}
+  name="gender"
+  render={({ field }) => (
+    <Select
+      value={field.value ?? undefined}
+      onValueChange={(value) => field.onChange(value ?? undefined)}
+    >
+      <SelectTrigger>
+        <SelectValue placeholder="Select Gender" />
+      </SelectTrigger>
+
+      <SelectContent>
+        <SelectItem value="MALE">Male</SelectItem>
+        <SelectItem value="FEMALE">Female</SelectItem>
+        <SelectItem value="OTHER">Other</SelectItem>
+      </SelectContent>
+    </Select>
+  )}
+/>
+
+{errors.gender && (
+  <p className="mt-1 text-sm text-red-500">
+    {errors.gender.message}
+  </p>
+)}
+</div>
 
         {/* Employee ID */}
         {/* <div>

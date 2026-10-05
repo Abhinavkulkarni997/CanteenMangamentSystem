@@ -2,6 +2,7 @@ export interface RegisterForm {
   name: string;
   email: string;
   mobile: string;
+  gender: "MALE" | "FEMALE" | "OTHER" | "";
   password: string;
   confirmPassword: string;
 

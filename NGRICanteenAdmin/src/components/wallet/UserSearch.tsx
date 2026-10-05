@@ -167,7 +167,7 @@ const UserSearch = ({ onSelect }: Props) => {
             )}
 
             {!isLoading &&
-              data.map((user) => (
+              data.map((user: SearchUser) => (
                 <div
                   key={user.id}
                   onClick={() => handleSelect(user)}

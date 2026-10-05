@@ -11,6 +11,7 @@ export const createUserSchema = z.object({
   mobile: z
     .string()
     .regex(/^[6-9]\d{9}$/, "Invalid mobile number"),
+    gender: z.enum(["MALE", "FEMALE", "OTHER"]),
 
   password: z.string().min(6),
 
@@ -80,6 +81,7 @@ export const updateUserSchema = z.object({
     .string()
     .regex(/^[6-9]\d{9}$/)
     .optional(),
+    gender: z.enum(["MALE", "FEMALE", "OTHER"]).optional(),
 
   employeeId: z.string().optional(),
   projectStaffId: z.string().optional(),

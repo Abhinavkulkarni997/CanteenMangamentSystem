@@ -208,6 +208,7 @@ export const reportOrders = async ({
             mobile: true,
             designation: true,
             division: true,
+            gender: true,
           },
         },
 

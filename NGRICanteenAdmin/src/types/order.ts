@@ -8,9 +8,15 @@ export interface LatestOrder{
         name:string,
         employeeId?:string | null,
         projectStaffId?: string | null,
-        mobile:string,
-    }
+        mobile:string;
+    } | null;
+    items:{
+        menuItem:{
+            itemName:string,
+        };
+    }[];
 }
+
 
 export interface Order{
     id:number;
@@ -35,6 +41,10 @@ export interface Order{
         quantity:number;
         unitPrice:number;
         totalPrice:number;
+        menuItem: {
+            itemName: string;
+            sessionType: string;
+        };
     }[];
 }
 export interface OrdersResponse{

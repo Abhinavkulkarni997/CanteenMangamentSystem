@@ -6,4 +6,5 @@ export const menuSchema=z.object({
     sessionType:z.enum(["LUNCH","DINNER"])
 
 });
+export type MenuFormInput = z.input<typeof menuSchema>;
 export type MenuForm=z.infer<typeof menuSchema>;

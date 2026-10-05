@@ -1,3 +1,4 @@
+import type {LatestOrder} from "./order";
 export interface Dashboard {
 
     totalOrders: number;

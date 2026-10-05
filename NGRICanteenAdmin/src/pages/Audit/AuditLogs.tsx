@@ -15,7 +15,8 @@ export default function AuditLogs() {
 
   const [endDate, setEndDate] = useState("");
 
-  const [adminId, setAdminId] = useState<number>();
+  // const [adminId, setAdminId] = useState<number>();
+  const [adminId] = useState<number | undefined>(undefined);
 
   const { data, loading } = useAuditLogs({
     page,

@@ -28,8 +28,8 @@ import {
   playSuccessFeedback,
   playErrorFeedback,
 } from "../../utils/scannerFeedback";
-import type { AxiosError } from "axios";
-
+// import type { AxiosError } from "axios";
+import {isAxiosError} from "axios";
 export default function Scanner() {
   const [lastOrder, setLastOrder] = useState<ScannedOrder | null>(null);
   const [scanHistory, setScanHistory] = useState<ScanHistoryItem[]>([]);
@@ -74,7 +74,7 @@ export default function Scanner() {
   return (
     <div className="space-y-6">
       <h1 className="text-2xl font-bold">QR Scanner</h1>
-      <Select value={cameraId} onValueChange={setCameraId}>
+      <Select value={cameraId} onValueChange={(value)=>setCameraId(value??"")}>
         <SelectTrigger className="w-[320px]">
           <SelectValue placeholder="Select Camera" />
         </SelectTrigger>
@@ -146,12 +146,15 @@ export default function Scanner() {
                       }, 2000);
                     },
 
-                    onError: async (error: AxiosError<any>) => {
+                    onError: async (error) => {
                       lastToken.current = "";
                       setScannerStatus("READY");
+                      const message = isAxiosError(error)
+                        ? error.response?.data?.message
+                        : undefined;
 
                       toast.error(
-                        error.response?.data?.message ?? "Collection Failed",
+                        message ?? "Collection Failed",
                       );
                       await playErrorFeedback();
 
@@ -160,11 +163,13 @@ export default function Scanner() {
                   });
                 },
 
-                onError: async (error: AxiosError<any>) => {
+                onError: async (error) => {
                   lastToken.current = "";
                   setScannerStatus("READY");
-
-                  toast.error(error.response?.data?.message ?? "Invalid QR");
+                  const message = isAxiosError(error)
+                        ? error.response?.data?.message
+                        : undefined;
+                  toast.error(message ?? "Invalid QR");
                   await playErrorFeedback();
 
                   resolve();

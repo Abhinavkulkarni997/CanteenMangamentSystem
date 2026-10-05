@@ -82,6 +82,7 @@ export const getLogs = async ({
                 id: true,
                 name: true,
                 employeeId: true,
+                gender: true,
               },
             },
           },

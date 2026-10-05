@@ -30,8 +30,8 @@ export const createUser = asyncHandler(async (req, res) => {
     data.photoUrl = `/uploads/users/${req.file.filename}`;
   }
 
-  console.log("BODY:", req.body);
-console.log("FILE:", req.file);
+//   console.log("BODY:", req.body);
+// console.log("FILE:", req.file);
 
   const user = await service.createUser(data);
 

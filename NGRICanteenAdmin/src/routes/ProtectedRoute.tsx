@@ -1,5 +1,5 @@
 import { Navigate } from "react-router-dom";
-
+import type {ReactNode} from "react";
 import { useAuth } from "../context/AuthContext";
 
 export default function ProtectedRoute({
@@ -8,7 +8,7 @@ export default function ProtectedRoute({
 
 }: {
 
-    children: JSX.Element;
+    children: ReactNode;
 
 }) {
 

@@ -42,7 +42,7 @@ Object.entries(values).forEach(([key, value]) => {
 if (photo) {
   formData.append("photo", photo);
 }
-console.log(photo);
+// console.log(photo);
 
 for (const [key, value] of formData.entries()) {
   console.log(key, value);

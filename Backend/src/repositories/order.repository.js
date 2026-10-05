@@ -117,6 +117,7 @@ export const getOrders = ({
                     employeeId: true,
                     projectStaffId: true,
                     mobile: true,
+                    gender:true
 
                 }
 
@@ -307,6 +308,7 @@ export const getOrderById = (id, userId) => {
                     employeeId: true,
                     projectStaffId: true,
                     mobile: true,
+                    gender:true
                     
 
                 }
@@ -370,7 +372,8 @@ export const findOrderById = (id) => {
                     designation: true,
                     division: true,
                     mobile: true,
-                    role: true
+                    role: true,
+                    gender: true
                 }
             },
 

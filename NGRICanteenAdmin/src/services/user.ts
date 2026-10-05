@@ -1,10 +1,10 @@
 import api from "./api";
 import type {
-  CreateUserRequest,
+  // CreateUserRequest,
   GetUsersParams,
   ResetPasswordRequest,
   UpdateStatusRequest,
-  UpdateUserRequest,
+  // UpdateUserRequest,
 } from "../types/user";
 
 export const getUsers = (params: GetUsersParams) =>

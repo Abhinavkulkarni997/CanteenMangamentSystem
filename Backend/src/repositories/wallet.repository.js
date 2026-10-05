@@ -28,6 +28,7 @@ export const findWalletByUserId = async (userId) => {
         select: {
           id: true,
           name: true,
+          gender: true,
           employeeId: true,
           projectStaffId: true,
           mobile: true,

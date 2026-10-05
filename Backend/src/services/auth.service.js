@@ -255,7 +255,7 @@ export const changePassword = async (
   loggedInUserId,
   payload
 ) => {
-console.log("Logged in User ID:", loggedInUserId);
+// console.log("Logged in User ID:", loggedInUserId);
   const user =
     await findUserById(loggedInUserId);
     console.log("DB User:", {
@@ -272,14 +272,14 @@ console.log("Logged in User ID:", loggedInUserId);
     );
   }
 
-  console.log("Old Password:", payload.oldPassword);
-console.log("Hashed Password:", user.password);
+//   console.log("Old Password:", payload.oldPassword);
+// console.log("Hashed Password:", user.password);
   const isOldPasswordCorrect =
     await bcrypt.compare(
       payload.oldPassword,
       user.password
     );
-    console.log("Password Match:", isOldPasswordCorrect);
+    // console.log("Password Match:", isOldPasswordCorrect);
 
   if (!isOldPasswordCorrect) {
     throw new ApiError(

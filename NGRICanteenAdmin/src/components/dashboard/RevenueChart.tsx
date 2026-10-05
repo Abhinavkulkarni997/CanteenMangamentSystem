@@ -46,7 +46,7 @@ export default function RevenueChart({data}:Props) {
 
           <XAxis dataKey="day"/>
 
-          <Tooltip formatter={(value: number) => [`₹${value}`, "Revenue"]}/>
+          <Tooltip formatter={(value) => [`₹${String(value ?? 0)}`, "Revenue"]}/>
 
           <Area
             dataKey="revenue"

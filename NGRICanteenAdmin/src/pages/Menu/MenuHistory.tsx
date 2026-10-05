@@ -14,7 +14,7 @@ export default function MenuHistory() {
         loading,
         total,
         totalPages,
-        refresh,
+        // refresh,
 
     } = useMenuHistory(page);
 

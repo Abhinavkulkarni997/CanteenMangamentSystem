@@ -145,6 +145,7 @@ if (payload.userType === "PROJECT_STAFF") {
         name: true,
         email: true,
         mobile: true,
+        gender: true,
         employeeId: true,
         projectStaffId: true,
         designation: true,

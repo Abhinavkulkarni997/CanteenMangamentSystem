@@ -4,6 +4,7 @@ export const INITIAL_REGISTER_FORM: RegisterForm = {
   name: "",
   email: "",
   mobile: "",
+  gender: "",
   password: "",
   confirmPassword: "",
 
