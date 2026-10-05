@@ -258,12 +258,12 @@ export const changePassword = async (
 // console.log("Logged in User ID:", loggedInUserId);
   const user =
     await findUserById(loggedInUserId);
-    console.log("DB User:", {
-  id: user.id,
-  email: user.email,
-  mobile: user.mobile,
-  password: user.password,
-});
+//     console.log("DB User:", {
+//   id: user.id,
+//   email: user.email,
+//   mobile: user.mobile,
+//   password: user.password,
+// });
 
   if (!user) {
     throw new ApiError(
