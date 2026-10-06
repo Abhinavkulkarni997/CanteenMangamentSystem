@@ -52,7 +52,7 @@ export default function EditUser() {
       });
       
 
-      navigate("/admin/users");
+      navigate("/users");
     },
 
     

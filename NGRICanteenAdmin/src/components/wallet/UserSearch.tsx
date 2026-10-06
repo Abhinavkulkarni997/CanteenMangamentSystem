@@ -180,7 +180,7 @@ const UserSearch = ({ onSelect }: Props) => {
                       <img
                         src={
                           user.photoUrl
-                            ? `${import.meta.env.VITE_API_URL}${user.photoUrl}`
+                            ? `${import.meta.env.VITE_SERVER_URL}${user.photoUrl}`
                             : "/avatar.png"
                         }
                         alt={user.name}

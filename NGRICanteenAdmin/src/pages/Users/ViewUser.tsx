@@ -159,7 +159,7 @@ export default function ViewUser() {
 
             <Button
               onClick={() =>
-                navigate(`/admin/users/${user.id}/edit`)
+                navigate(`/users/${user.id}/edit`)
               }
             >
               Edit User

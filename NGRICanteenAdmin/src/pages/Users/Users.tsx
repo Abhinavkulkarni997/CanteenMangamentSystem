@@ -39,7 +39,7 @@ export default function Users() {
         title="Users"
         description="Manage all canteen users"
         action={
-          <Button onClick={() => navigate("/admin/users/new")}>
+          <Button onClick={() => navigate("/users/new")}>
             <Plus className="mr-2 h-4 w-4" />
             Add User
           </Button>

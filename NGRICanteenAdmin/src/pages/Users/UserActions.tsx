@@ -44,7 +44,7 @@ const [statusOpen, setStatusOpen] = useState(false);
 
         <DropdownMenuItem
           onClick={() =>
-            navigate(`/admin/users/${user.id}`)
+            navigate(`/users/${user.id}`)
           }
         >
           View
@@ -52,7 +52,7 @@ const [statusOpen, setStatusOpen] = useState(false);
 
         <DropdownMenuItem
           onClick={() =>
-            navigate(`/admin/users/${user.id}/edit`)
+            navigate(`/users/${user.id}/edit`)
           }
         >
           Edit

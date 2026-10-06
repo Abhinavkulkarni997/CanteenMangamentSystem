@@ -9,7 +9,7 @@ export default function Sidebar() {
   const { logout } = useAuth();
   const handleLogout = () => {
     logout();
-    navigate("/admin/login");
+    navigate("/login");
   };
   return (
     <aside className="fixed top-0 left-0 w-64  bg-slate-900 text-white h-screen p-4 flex flex-col shadow-xl z-50">
@@ -30,7 +30,7 @@ export default function Sidebar() {
       </div>
       <div className="border-t border-slate-700 p-4 space-y-2">
         <SidebarItem
-    to="/admin/profile"
+    to="/profile"
     title="My Profile"
     icon={User}
   />

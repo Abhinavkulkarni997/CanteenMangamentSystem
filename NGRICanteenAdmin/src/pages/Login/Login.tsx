@@ -27,7 +27,7 @@ useEffect(() => {
 
     if(token){
 
-        navigate("/admin/dashboard");
+        navigate("/dashboard");
 
     }
 
@@ -43,11 +43,11 @@ useEffect(() => {
     "Welcome Admin"
 
 );
-      // navigate("/admin/dashboard");
+      // navigate("/dashboard");
       if (response.forcePasswordChange) {
-    navigate("/admin/change-password");
+    navigate("/change-password");
 } else {
-    navigate("/admin/dashboard");
+    navigate("/dashboard");
 }
     } catch (error:any) {
        toast.error(

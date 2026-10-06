@@ -93,7 +93,7 @@ if (!profile) {
 
             <Button
               onClick={() =>
-                navigate("/admin/change-password")
+                navigate("/change-password")
               }
             >
               Change Password

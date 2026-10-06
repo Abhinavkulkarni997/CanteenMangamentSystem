@@ -13,7 +13,7 @@ export const navigation = [
   {
     title: "Dashboard",
 
-    to: "/admin/dashboard",
+    to: "/dashboard",
 
     icon: LayoutDashboard,
   },
@@ -21,7 +21,7 @@ export const navigation = [
   {
     title: "Menu",
 
-    to: "/admin/menu",
+    to: "/menu",
 
     icon: UtensilsCrossed,
   },
@@ -29,7 +29,7 @@ export const navigation = [
   {
     title: "Orders",
 
-    to: "/admin/orders",
+    to: "/orders",
 
     icon: ClipboardList,
   },
@@ -37,7 +37,7 @@ export const navigation = [
   {
     title: "QR Scanner",
 
-    to: "/admin/scanner",
+    to: "/scanner",
 
     icon: QrCode,
   },
@@ -45,13 +45,13 @@ export const navigation = [
   {
     title: "Users",
 
-    to: "/admin/users",
+    to: "/users",
 
     icon: Users,
   },
   {
   title: "Wallet",
-to: "/admin/wallet",
+to: "/wallet",
   icon: Wallet,
 
 },
@@ -59,13 +59,13 @@ to: "/admin/wallet",
   {
     title: "Reports",
 
-    to: "/admin/reports",
+    to: "/reports",
 
     icon: ChartColumn,
   },
   {
     title: "Audit Logs",
-    to: "/admin/audit",
+    to: "/audit",
     icon: ShieldCheck,
   },
   

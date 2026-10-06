@@ -40,7 +40,7 @@ const ChangePassword = () => {
 
       toast.success("Password changed successfully");
 
-      navigate("/admin/profile");
+      navigate("/profile");
 
     },
 

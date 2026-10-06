@@ -22,7 +22,7 @@ export default function AddUser() {
         queryKey: ["users"],
       });
 
-      navigate("/admin/users");
+      navigate("/users");
     },
 
     onError: (error:any) => {
