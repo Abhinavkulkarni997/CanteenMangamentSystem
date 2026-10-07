@@ -9,6 +9,7 @@ import { Card, CardContent } from "../../components/ui/card";
 import { Input } from "../../components/ui/input";
 import { Button } from "../../components/ui/button";
 import toast from "react-hot-toast";
+import NgriLogo from "../../assets/ngri-logo.png";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -66,8 +67,11 @@ useEffect(() => {
       <Card className="w-[420px] shadow-xl rounded-2xl">
         <CardContent className="p-8">
           <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold">CSIR-NGRI Canteen</h1>
-            <p className="text-slate-600 mt-2">Admin Portal</p>
+            <div className="flex items-center justify-center gap-1 mb-2">
+            <img src={NgriLogo} alt="CSIR-NGRI Logo" className=" h-10 w-10 object-contain" />
+            <h1 className="text-3xl font-bold">CSIR-NGRI CANTEEN</h1>
+            </div>
+            <p className="text-slate-700 mt-2">Admin Portal</p>
           </div>
 
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
