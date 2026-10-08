@@ -10,8 +10,8 @@ import TodayMenu from "../../components/dashboard/TodayMenu";
 
 const Dashboard = () => {
 const  {data,loading}=useDashboard();
-console.log("Dashboard Data:", data);
-console.log("Loading:", loading);
+// console.log("Dashboard Data:", data);
+// console.log("Loading:", loading);
 if(loading || !data){
  return (
   <div className="flex h-96 items-center justify-center">

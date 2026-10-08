@@ -44,12 +44,12 @@ if (photo) {
 }
 // console.log(photo);
 
-for (const [key, value] of formData.entries()) {
-  console.log(key, value);
-}
-for (const pair of formData.entries()) {
-  console.log(pair[0], pair[1]);
-}
+// for (const [key, value] of formData.entries()) {
+//   console.log(key, value);
+// }
+// for (const pair of formData.entries()) {
+//   console.log(pair[0], pair[1]);
+// }
 mutate(formData);
 
 

@@ -31,7 +31,7 @@ export default function Users() {
       }),
   });
 
-  console.log(data?.data);
+  // console.log(data?.data);
 
   return (
     <div className="p-6">
